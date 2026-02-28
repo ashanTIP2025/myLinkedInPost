@@ -17,7 +17,7 @@ post_template = "Give me {number} LinkedIn posts on {topic}"
 post_prompt = PromptTemplate(template=post_template, input_variables=['number', 'topic'])
 
 # Model
-gemini_model = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
+gemini_model = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite")
 
 # Chain
 post_chain = post_prompt | gemini_model
