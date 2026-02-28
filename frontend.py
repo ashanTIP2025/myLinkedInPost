@@ -8,7 +8,7 @@ import streamlit as mystream
 import os
 
 
-os.environ['GOOGLE_API_KEY']  = "AIzaSyDC32696yyaXpmfn422yqhX3VLcYmfj9Bc"
+os.environ['GOOGLE_API_KEY']  = "DUMMY"
 
 # Using Gemini Models
 
@@ -70,3 +70,4 @@ if mystream.button("Generate Posts"):
   # Example of using the LLM chain
   mypost = post_chain.invoke({"number" : number, "topic" : topic})
   mystream.write(mypost.content)
+
