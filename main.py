@@ -31,4 +31,9 @@ number = st.number_input("Number of posts (max 10)", min_value=1, max_value=10, 
 
 if st.button("Generate Post"):
     linkedInpost = post_chain.invoke({"number": number, "topic": topic})
-    st.write(linkedInpost.content)
+    content = linkedInpost.content
+    if isinstance(content, list):
+        text = "".join(block.get("text", "") for block in content if isinstance(block, dict))
+    else:
+        text = content
+    st.write(text)
